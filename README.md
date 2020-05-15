@@ -17,26 +17,22 @@ These instructions will get you a copy of the project up and running on your loc
 * Docker 19.0 or later
 ```
 
-### Installing
+### Usage
 
-Run `mvn package` to compile, test and create a package. The dockerfile maven plugin
-will update the docker image for this project. 
-```
-mvn package
-```
+This project uses a Makefile which makes it easier for you to execute the main tasks.
 
-Start the docker container
+`make compile`\
+`make test`\
+`make package`\
+`make run`\
+`make deploy`
 
-```
-docker-compose up
-```
+## Swagger
+You can access an interactive API documentation for this whole project built with Swagger by accessing:
 
-## Running the tests
+`http://localhost:8080/swagger-ui.html` 
 
-You can run the tests by navigating into the root folder and using
-```
-mvn test
-```
+There you can see all the endpoints available, their usage, responses and even try them for yourself.
 
 ## Built With
 
@@ -45,6 +41,7 @@ mvn test
 * [SpringBoot](http://spring.io/projects/spring-boot) - Framework used
 * [Spring Initializr](https://start.spring.io/) - Bootstrap for SpringBoot applications
 * [Docker](https://www.docker.com/) - Containers made simple
+* [Swagger](https://swagger.io/) - Documentation and Design Tools for Teams 
 
 ## Authors
 
