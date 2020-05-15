@@ -6,6 +6,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/api/hello-world")
 public class HelloWorldController {
@@ -20,7 +22,7 @@ public class HelloWorldController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Message> somePostMethod(@RequestBody Message message) {
+    public ResponseEntity<Message> somePostMethod(@Valid @RequestBody Message message) {
         var createdMessage = new Message();
         createdMessage.setMessage("HEY, you posted ".concat(message.getMessage()));
         return new ResponseEntity<Message>(createdMessage, HttpStatus.OK);
